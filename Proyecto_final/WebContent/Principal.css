@@ -1,0 +1,16 @@
+body{
+    background-color:black;
+    color:white ;
+}
+a{
+    text-decoration: none;
+    font-size: larger;
+    background-color: white;
+    border-radius: 1em;
+    padding: 10px;
+    color: black;
+}
+div{
+	margin: 20px;
+	display:inline-block;
+}
