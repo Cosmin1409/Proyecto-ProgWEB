@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="MandarMensaje.jsp">
+<form action="MandarMensaje.jsp" method="post">
 Usuario:
 <input type="text" name="destino">
 <br>

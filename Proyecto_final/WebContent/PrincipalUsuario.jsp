@@ -12,6 +12,9 @@
 <br>
 <a href="http://localhost:8080/Proyecto_final/verMensaje.jsp">Ver mensajes</a>
 <br>
+<a href="http://localhost:8080/Proyecto_final/verChats.jsp">Chats</a>
+<br>
 <a href="http://localhost:8080/Proyecto_final/Principal.jsp">Salir</a>
+
 </body>
 </html>

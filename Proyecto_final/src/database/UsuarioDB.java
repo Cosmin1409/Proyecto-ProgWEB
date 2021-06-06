@@ -5,7 +5,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
+import beans.Mensaje;
 import beans.Usuario;
 
 public class UsuarioDB {
@@ -61,6 +63,8 @@ public class UsuarioDB {
 				res= false;
 			}
 			
+			connection.close();
+			
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
@@ -94,6 +98,8 @@ public class UsuarioDB {
 				res= false;
 			}
 			
+			connection.close();
+			
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
@@ -101,6 +107,48 @@ public class UsuarioDB {
 		}
 		
 		return res;
+	}
+	
+	public ArrayList<String> verChats(Usuario usuario){
+		ArrayList<String> listaChats = new ArrayList<String>();
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			
+			Connection connection = DriverManager
+					.getConnection("jdbc:mysql://localhost:3306/usuarios?useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "root");
+			
+			String SELECT_USERS_SQL = "SELECT nombretransmisor from mensaje \r\n"
+					+ "where nombretransmisor not like ? and nombredestinatario like ? \r\n"
+					+ "group by nombretransmisor, nombredestinatario\r\n"
+					+ "UNION\r\n"
+					+ "SELECT nombredestinatario from mensaje \r\n"
+					+ "where nombredestinatario not like ? and nombretransmisor like ? \r\n"
+					+ "group by nombretransmisor, nombredestinatario;";
+				
+			
+			PreparedStatement preparedStatement = connection.prepareStatement(SELECT_USERS_SQL);
+			
+			preparedStatement.setString(1, usuario.getNombre());
+			preparedStatement.setString(2, usuario.getNombre());
+			preparedStatement.setString(3, usuario.getNombre());
+			preparedStatement.setString(4, usuario.getNombre());
+			
+			ResultSet rs =preparedStatement.executeQuery();
+			
+			while(rs.next()) {
+				listaChats.add(rs.getString(1));
+			}
+			connection.close();
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return listaChats;
 	}
 
 }

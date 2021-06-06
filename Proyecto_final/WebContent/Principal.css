@@ -12,5 +12,11 @@ a{
 }
 div{
 	margin: 20px;
-	display:inline-block;
+}
+
+#enviado{
+	float: right;
+}
+#recibido{
+	float:left;
 }
