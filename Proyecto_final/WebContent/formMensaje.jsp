@@ -8,6 +8,7 @@
 </head>
 <body>
 <form action="MandarMensaje.jsp" method="post">
+<input type="hidden" value="true" name="redireccionar">
 Usuario:
 <input type="text" name="destino">
 <br>

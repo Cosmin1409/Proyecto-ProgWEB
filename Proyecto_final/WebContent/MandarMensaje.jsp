@@ -19,10 +19,13 @@ MensajeDB mensajedb= new MensajeDB();
 UsuarioDB usuariodb= new UsuarioDB();
 usuario= (Usuario) session.getAttribute("user");
 mensaje.setNombreTransmisor(usuario.getNombre());
-if(usuariodb.existeUsuario(mensaje.getNombreDestinatario())){
-mensajedb.mandarMensaje(mensaje);
-response.sendRedirect("http://localhost:8080/Proyecto_final/PrincipalUsuario.jsp");
-}
+
+if(request.getParameter("redireccionar").equals("true")){
+	
+	if(usuariodb.existeUsuario(mensaje.getNombreDestinatario())){
+	mensajedb.mandarMensaje(mensaje);
+	response.sendRedirect("http://localhost:8080/Proyecto_final/PrincipalUsuario.jsp");
+	}
 else{
 	out.print("No existe el usuario");
 	response.setHeader("Refresh", "5; url=http://localhost:8080/Proyecto_final/PrincipalUsuario.jsp");
@@ -30,6 +33,10 @@ else{
 	<br>
 	<a href="http://localhost:8080/Proyecto_final/formMensaje.jsp">Volver</a>
 	<%
+	}
+}
+else{
+	mensajedb.mandarMensaje(mensaje);
 }
 %>
 </body>

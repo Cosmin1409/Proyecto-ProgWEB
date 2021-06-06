@@ -16,7 +16,22 @@ div{
 
 #enviado{
 	float: right;
+	clear: right;
+	background-color:green;
+	border-radius: 1em;
+	padding: 3px;
 }
 #recibido{
 	float:left;
+	clear: left;
 }
+
+#caja{
+	display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
