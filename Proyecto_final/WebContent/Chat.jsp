@@ -12,19 +12,21 @@
 <link href="Principal.css" rel="stylesheet" type="text/css">
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script>
-	$(document).ready(function() {
-		$('#submit').click(function(event) {
-			var redirectVar = $('#redireccionar').val();
-			var destinoVar = $('#destino').val();
-			var contenidoVar = $('#contenido').val();
-			// Si en vez de por post lo queremos hacer por get, cambiamos el $.post por $.get
+$(document).ready(function() {
+	$('#submit').click(function(event) {
+		var redirectVar = $('#redireccionar').val();
+		var destinoVar = $('#destino').val();
+		var contenidoVar = $('#contenido').val();
+		if (contenidoVar != ''){
 			$.post('MandarMensaje.jsp', {
 				redireccionar : redirectVar,
 				destino : destinoVar,
 				contenido : contenidoVar
 			});
-		});
+		}
 	});
+});
+
 </script>
 <script>
 $(function() {
