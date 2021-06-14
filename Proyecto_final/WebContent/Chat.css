@@ -1,0 +1,66 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    border: 0px; 
+    background-color: #ffecd1;
+}
+
+#enviado{
+	float: right;
+	clear: right;
+	background-color:#40C9A2;
+	border-radius: 1em;
+	padding: 10px;
+	color:white;
+	margin-bottom: 2px;
+}
+#recibido{
+	float:left;
+	clear: left;
+	background-color: #f45b69;
+	color:white;
+	border-radius: 1em;
+	padding: 10px;
+	margin-bottom: 2px;
+}
+
+#caja{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom:200px;
+}
+
+a{
+    text-decoration: none;
+    font-size: larger;
+    background-color: #f45b69;
+    border-radius: 1em;
+    padding: 10px;
+    color:white;
+}
+
+#volver{
+	position:fixed;
+    top:20;
+    left:20;
+    margin:20px;
+}
+
+#envio{
+	background-color: #f45b69;
+	padding:20px;
+	bottom:0;
+	position:fixed;
+	width:100%;
+	margin-top:10px;
+}
+
+#contenido{
+	width:1790px;
+	height:80px;
+}
+
+

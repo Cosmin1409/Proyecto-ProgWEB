@@ -5,16 +5,26 @@
 <head>
 <meta charset="utf-8">
 <title>Insert title here</title>
+<link href="${pageContext.request.contextPath}/MandarMensaje.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+<div id="volver">
+<a href="${pageContext.request.contextPath}/PrincipalUsuario.jsp">Volver</a>
+</div>
+<div id="contenedor">
 <form action="MandarMensaje.jsp" method="post">
+<div id="campos">
 <input type="hidden" value="true" name="redireccionar">
-Usuario:
+<label for="destino">Usuario</label>
+<br>
 <input type="text" name="destino">
 <br>
-<textarea name="contenido" rows="20" cols="40"></textarea>
+<br>
+<textarea name="contenido" rows="20" cols="60"></textarea>
 <br>
 <input type="submit" value="Mandar">
+</div>
 </form>
+</div>
 </body>
 </html>

@@ -1,0 +1,44 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    border: 0px; 
+}
+#contenedor{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #ffecd1;
+  height:100%;
+  width: 100%;
+  position:fixed;
+}
+
+#campos{
+	background-color: #f45b69;
+    border-radius: 1em;
+    padding: 10px;
+    color:white;
+    margin: 1px;
+    font-size:18pt;
+}
+a{
+    text-decoration: none;
+    font-size: larger;
+    background-color: #f45b69;
+    border-radius: 1em;
+    padding: 10px;
+    color:white;
+}
+#volver{
+	position:fixed;
+    top:20;
+    left:20;
+    margin:20px;
+    z-index:1;
+}
+
+a:hover{
+  background-color:#40C9A2;
+}

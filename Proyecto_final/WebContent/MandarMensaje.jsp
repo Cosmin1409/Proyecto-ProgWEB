@@ -3,6 +3,7 @@
  <%@ page import="database.MensajeDB" %>
  <%@ page import="database.UsuarioDB" %>
  <%@ page import="beans.Usuario" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,14 +25,14 @@ if(request.getParameter("redireccionar").equals("true")){
 	
 	if(usuariodb.existeUsuario(mensaje.getNombreDestinatario())){
 	mensajedb.mandarMensaje(mensaje);
-	response.sendRedirect("http://localhost:8080/Proyecto_final/PrincipalUsuario.jsp");
+	response.sendRedirect(request.getContextPath()+"/PrincipalUsuario.jsp");
 	}
 else{
 	out.print("No existe el usuario");
-	response.setHeader("Refresh", "5; url=http://localhost:8080/Proyecto_final/PrincipalUsuario.jsp");
+	response.setHeader("Refresh", "2; url="+request.getContextPath()+"/PrincipalUsuario.jsp");
 	%>
 	<br>
-	<a href="http://localhost:8080/Proyecto_final/formMensaje.jsp">Volver</a>
+	<a href="${pageContext.request.contextPath}/formMensaje.jsp">Volver</a>
 	<%
 	}
 }

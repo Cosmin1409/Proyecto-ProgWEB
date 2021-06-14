@@ -6,15 +6,13 @@
 <meta charset="utf-8">
 <title>Insert title here</title>
 </head>
-<link href="Principal.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/Principal.css" rel="stylesheet" type="text/css">
 <body>
 <% session.invalidate();%>
 <div>
-<a href="http://localhost:8080/Proyecto_final/formLogin.jsp">Login</a>
-</div>
+<a href="${pageContext.request.contextPath}/formLogin.jsp">Login</a>
 <br/>
-<div>
-<a href="http://localhost:8080/Proyecto_final/formRegistro.jsp">Registrarse</a>
+<a href="${pageContext.request.contextPath}/formRegistro.jsp">Registrarse</a>
 </div>
 </body>
 </html>

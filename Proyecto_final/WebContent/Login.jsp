@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@page import="database.UsuarioDB"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,10 +16,11 @@
 UsuarioDB usuariodb = new UsuarioDB();
 if(usuariodb.loginUsuario(usuario)){
 	session.setAttribute("user", usuario);
-	response.sendRedirect("http://localhost:8080/Proyecto_final/PrincipalUsuario.jsp");
+	response.sendRedirect(request.getContextPath() +"/PrincipalUsuario.jsp");
 }
 else{
-	response.sendRedirect("http://localhost:8080/Proyecto_final/Principal.jsp");
+	out.print("Usuario o contraseña incorrectos");
+	response.setHeader("Refresh", "1; url="+request.getContextPath()+"/Principal.jsp");
 }
 %>
 </body>

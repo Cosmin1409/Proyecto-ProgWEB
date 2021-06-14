@@ -9,7 +9,7 @@
 <head>
 <meta charset="utf-8">
 <title>Insert title here</title>
-<link href="Principal.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/Chat.css" rel="stylesheet" type="text/css">
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script>
 $(document).ready(function() {
@@ -45,7 +45,9 @@ function refreshPage(){
 <jsp:useBean id="usuario1" class="beans.Usuario"/>
 <jsp:useBean id="usuario2" class="beans.Usuario"/>
 <jsp:setProperty property="nombre" name="usuario2" param="user2"/>
-<a href="http://localhost:8080/Proyecto_final/PrincipalUsuario.jsp">Volver inicio</a>
+<div id="volver">
+<a href="${pageContext.request.contextPath}/verChats.jsp">Volver</a>
+</div>
 <div id="caja">
 <%
 usuario1= (Usuario) session.getAttribute("user");
@@ -82,14 +84,16 @@ for(Mensaje a : listaChat){
 }
 %>
 
-	<div id="envio">
+	</div>
 		<form id="form">
 		<input type="hidden" value="false" id="redireccionar">
 		<input type="hidden" id="destino" value="<%=pageContext.getAttribute("destino")%>">
+		<div id="envio">
 		<textarea id="contenido" rows="5" cols="60"></textarea>
 		<input type="button" id="submit" onClick="refreshPage()" value="Mandar">
+		</div>
 		</form>
-	</div>
-</div>
+	
+
 </body>
 </html>

@@ -1,37 +1,79 @@
-body{
-    background-color:black;
-    color:white ;
+html, body {
+    margin: 0px;
+    padding: 0px;
+    border: 0px; 
 }
+
 a{
     text-decoration: none;
-    font-size: larger;
-    background-color: white;
+    font-size: 24pt;
+    background-color: #f45b69;
     border-radius: 1em;
-    padding: 10px;
-    color: black;
+    padding: 20px;
+    color:white;
+    margin: 10px;
 }
 div{
-	margin: 20px;
-}
-
-#enviado{
-	float: right;
-	clear: right;
-	background-color:green;
-	border-radius: 1em;
-	padding: 3px;
-}
-#recibido{
-	float:left;
-	clear: left;
-}
-
-#caja{
-	display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: 100vh;
+  background-color: #ffecd1;
+  height:100%;
+  width: 100%;
+  position:fixed;
 }
+
+a:hover{
+  background-color:#40C9A2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -12,9 +12,25 @@
 <jsp:setProperty property="nombre" name="usuario" param="nombre"/>
 <jsp:setProperty property="contrasena" name="usuario" param="contrasena"/>
 <%
+
 UsuarioDB usuariodb = new UsuarioDB();
-usuariodb.registrarUsuario(usuario);
-response.sendRedirect("http://localhost:8080/Proyecto_final/Principal.jsp");
+if(request.getParameter("nombre")!="" && request.getParameter("contrasena")!=""){
+	if(!usuariodb.existeUsuario(usuario.getNombre())){
+		usuariodb.registrarUsuario(usuario);
+		if(usuariodb.loginUsuario(usuario)){
+			session.setAttribute("user", usuario);
+			response.sendRedirect(request.getContextPath() +"/PrincipalUsuario.jsp");
+		}
+	}
+	else{
+		out.print("El usuario ya existe");
+		response.setHeader("Refresh", "1; url="+request.getContextPath()+"/Principal.jsp");
+	}
+}
+else{
+	out.print("Debes rellenar los campos");
+	response.setHeader("Refresh", "1; url="+request.getContextPath()+"/formRegistro.jsp");
+}
 %>
 </body>
 </html>

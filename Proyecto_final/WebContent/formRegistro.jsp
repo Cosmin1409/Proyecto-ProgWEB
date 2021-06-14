@@ -5,16 +5,26 @@
 <head>
 <meta charset="utf-8">
 <title>Insert title here</title>
+<link href="${pageContext.request.contextPath}/Registro.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+<div id="volver">
+<a href="${pageContext.request.contextPath}/Principal.jsp">Volver</a>
+</div>
+<div id="contenedor">
 <form action="Registrar.jsp" method="post">
-<label for="nombre">Nombre: </label>
+<div id="campos">
+<label for="nombre">Nombre</label>
+<br>
 <input type="text" name="nombre">
 <br><br>
-<label for="contrasena">Contraseña: </label>
+<label for="contrasena">Contraseña</label>
+<br>
 <input type="password" name="contrasena">
 <br><br>
-<input type="submit" value="Registrar">
+<input type="submit" value="Registrarse">
+</div>
 </form>
+</div>
 </body>
 </html>
