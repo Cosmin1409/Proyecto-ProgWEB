@@ -8,6 +8,7 @@ html, body {
   justify-content: center;
   align-items: start;
   background-color: #ffecd1;
+  position:absolute;
   height:100%;
   width: 100%;
   

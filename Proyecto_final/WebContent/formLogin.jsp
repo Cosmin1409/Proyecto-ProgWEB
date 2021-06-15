@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Insert title here</title>
+<title>v_PRUEBAS</title>
 <link href="${pageContext.request.contextPath}/Login.css" rel="stylesheet" type="text/css">
 </head>
 <body>

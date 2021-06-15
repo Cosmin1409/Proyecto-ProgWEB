@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Insert title here</title>
+<title>v_PRUEBAS</title>
 </head>
 <body>
 <jsp:useBean id="usuario" class="beans.Usuario" />

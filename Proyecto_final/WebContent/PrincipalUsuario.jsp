@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Insert title here</title>
+<title>v_PRUEBAS</title>
 <link href="${pageContext.request.contextPath}/PrincipalUsuario.css" rel="stylesheet" type="text/css">
 </head>
 <body>
